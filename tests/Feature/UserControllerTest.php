@@ -23,6 +23,18 @@ class UserControllerTest extends TestCase
         ->assertRedirect("/");
     }
 
+    public function testLoginUntukUserSudahLogin()
+    {
+        $this->withSession([
+            "user" => "balqis_fa"
+        ])
+        ->post('/login', [
+            'user' => 'balqis_fa',
+            'password' => '210321'
+        ])
+            ->assertRedirect('/');
+    }
+
     public function testLoginSuccess()
     {
         $this->post('/login', [
