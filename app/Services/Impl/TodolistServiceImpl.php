@@ -30,6 +30,7 @@ class TodolistServiceImpl implements TodolistService
         foreach($todolist as $index => $value){
             if($value["id"] == $id){
                 unset($todolist[$index]);
+                break;
             }
         }
 
